@@ -1,0 +1,14 @@
+/* components/searchInput/index.wxss */
+.searchInput{
+    background-color:var(--themeColor);
+    padding:10px;
+}
+
+.search{
+    background-color:#fff;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10rpx;
+    padding:5px
+}

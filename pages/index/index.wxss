@@ -1,0 +1,34 @@
+.index_swiper swiper {
+  height: 340rpx;
+}
+.navigator_index {
+  display: flex;
+}
+.navigator_index navigator {
+  flex: 1;
+}
+.floor_index .floor_groups {
+  margin-top: 5px;
+}
+.floor_index .floor_groups .floor_groups_title {
+  background-color: #f4f4f4;
+}
+.floor_index .floor_groups .floor_groups_content {
+  padding: 10px;
+  overflow: hidden;
+}
+.floor_index .floor_groups .floor_groups_content navigator {
+  width: 33.33%;
+  float: left;
+  border-right: 3px solid #fff;
+}
+.floor_index .floor_groups .floor_groups_content navigator:nth-last-child(-n+4) {
+  height: 192.97413793rpx;
+  border-right: 3px solid #fff;
+}
+.floor_index .floor_groups .floor_groups_content navigator:nth-last-child(-n+4) image {
+  height: 100%;
+}
+.floor_index .floor_groups .floor_groups_content navigator:nth-last-child(-n+2) {
+  border-top: 3px solid #fff;
+}
