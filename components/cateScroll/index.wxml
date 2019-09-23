@@ -1,0 +1,6 @@
+<!--components/cateScroll/index.wxml-->
+<view class="cate_scroll">
+    <scroll-view class="scroll_group" enable-flex scroll-y>
+        <view class="scroll_group_item" wx:for="{{cateList}}" wx:for-index="index" wx:for-item="item" wx:key="cat_id">{{item.cat_name}}</view>
+    </scroll-view>
+</view>

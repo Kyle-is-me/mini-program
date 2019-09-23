@@ -1,4 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "SearchInput":"../../components/searchInput/index",
+    "CateScroll":"../../components/cateScroll/index",
+    "CateBrandList":"../../components/cateBrandList/index"
+  },
   "navigationBarTitleText": "分类"
 }
