@@ -1,0 +1,4 @@
+<!--components/goodsList/index.wxml-->
+<view>
+    <slot></slot>    
+</view>

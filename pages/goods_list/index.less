@@ -1,0 +1,44 @@
+/* pages/goods_list/index.wxss */
+
+.goods_list{
+    .goods_list_item{
+        display: flex;
+       border-bottom: 1px solid #ddd;
+        .goods_logo{
+            flex:1;
+            height: 250rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            image{
+               width: 80%; 
+            }
+        }
+        .goods_item_desc{
+            flex:2;
+            padding: 30rpx 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .goods_item_title{                                         
+                overflow: hidden;
+                display: -webkit-box;
+                white-space: normal!important;
+                text-overflow: ellipsis;
+                word-wrap: break-word;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical
+            }
+            .goods_item_price{               
+                color: var(--themeColor);
+                font-size: 40rpx;
+            }
+        }
+    }
+    .no_more_goods{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #f9f9ff9;
+    }
+}

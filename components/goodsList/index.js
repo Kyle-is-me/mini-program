@@ -1,4 +1,4 @@
-// components/cateBrandList/index.js
+// components/goodsList/index.js
 Component({
   /**
    * 组件的属性列表

@@ -1,0 +1,20 @@
+/* components/goodsTab/index.wxss */
+
+.goods_tab{
+    display: flex;
+    height: 80rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.goods_tab .goods_tab_item{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.active{
+    color:var(--themeColor);
+    border-bottom:1px solid currentColor;
+}

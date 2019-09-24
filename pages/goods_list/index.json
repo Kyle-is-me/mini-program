@@ -1,3 +1,11 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "SearchInput":"../../components/searchInput/index",
+    "GoodsTab":"../../components/goodsTab/index",
+    "GoodsList":"../../components/goodsList/index"
+  },
+  
+    "navigationBarTitleText": "商品列表",
+    "enablePullDownRefresh": true
+  
 }
