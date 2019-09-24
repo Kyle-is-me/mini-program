@@ -1,0 +1,100 @@
+page{
+    padding-bottom: 90rpx;
+}
+.goods_detail{
+    padding: 0 8rpx;
+    .goods_picture{
+        height: 516rpx;
+        
+        .goods_picture_item{
+            image{               
+                
+               height: 500rpx;
+
+            }
+        }
+    }   
+    .goods_price{
+        font-size: 32rpx;
+        font-weight: 700;
+        color: var(--themeColor);
+        padding: 20rpx;
+        
+    }
+
+    .goods_info{
+        padding: 10rpx;
+        display: flex;
+        border-bottom: 10rpx solid #ddd;
+        .goods_name{
+            flex:5;
+            display: -webkit-box;
+            overflow:hidden ;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            border-right: 1rpx solid #bbb;
+        }
+        .goods_collect{
+            flex:1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .goods_introduce{
+        .goods_pic_detail{
+            color:var(--themeColor);
+            font-size: 32rpx;
+            font-weight: 600;
+            padding: 10rpx;
+        }
+    }
+
+}
+
+.footer_tool{
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;  
+    color:#000;
+    height: 90rpx;
+    .contact_serve{
+        flex:2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        font-size: 20rpx;
+        position: relative;
+        button{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            // background-color: pink;
+            opacity: 0;
+        }
+    }
+    .shopping_cart,.shopping_buy{
+        flex:3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        color:#fff;
+    }
+    .shopping_cart{
+        background-color: #ffa500;
+        
+    }
+    .shopping_buy{
+        background-color:var(--themeColor);
+    }
+}
