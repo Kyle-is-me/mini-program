@@ -1,7 +1,7 @@
 <view class="goods_detail">
     <!-- 轮播图开始 -->
     <swiper class="goods_picture" indicator-dots interval="5000" circular="true" autoplay>
-        <swiper-item class="goods_picture_item" wx:for="{{goodsDetail.pics}}" wx:key="pics_id">
+        <swiper-item class="goods_picture_item" wx:for="{{goodsDetail.pics}}" wx:key="pics_id" bindtap="handlePreview" data-current="{{item.pics_mid}}">
             <image src="{{item.pics_mid}}" mode="aspectFill"></image>
         </swiper-item>
     </swiper>
@@ -52,7 +52,7 @@
                 <view>购物车</view>
             </navigator>
         </view>
-        <view class="shopping_cart">
+        <view class="shopping_cart" bindtap="handleAddGoods">
             加入购物车
         </view>
         <view class="shopping_buy">
