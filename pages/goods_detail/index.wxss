@@ -8,6 +8,7 @@ page {
   height: 516rpx;
 }
 .goods_detail .goods_picture .goods_picture_item image {
+  padding: 10rpx;
   height: 500rpx;
 }
 .goods_detail .goods_price {

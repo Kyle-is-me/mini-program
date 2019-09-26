@@ -5,7 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    //传递给tab的数据
+    tabList:[
+      {id:1,text:'商品收藏'},
+      {id:1,text:'品牌收藏'},
+      {id:1,text:'店铺收藏'},
+      {id:1,text:'浏览足迹'}
+    ],
+    //传递给子组件的当前索引
+    currentIndex:0
   },
 
   /**
@@ -15,52 +23,14 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //获取tab组件传递的数据
+  getIndex(obj){
+    const {index}=obj.detail
+    console.log(2)
+    this.setData({
+      currentIndex:index
+    })
   }
+
+ 
 })

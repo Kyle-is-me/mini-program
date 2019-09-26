@@ -1,5 +1,5 @@
 // pages/goods_detail/index.js
-
+import regeneratorRuntime from '../../lib/runtime/runtime'
 import { request } from '../../request/index'
 
 Page({
@@ -22,18 +22,14 @@ Page({
   },
 
   //获取商品详情数据
-  getGoodsDetail(goods_id) {
-    request({
-      url: '/goods/detail',
-      data: { goods_id }
-    }).then((res) => {
-      console.log(res.data)
-      //总数据
+  async getGoodsDetail(goods_id) {
+    const res = await request({url: '/goods/detail',data: { goods_id }})   
+    // 总数据
       this.setData({
-        goodsDetail: res.data.message
+        goodsDetail: res
       })
-    })
   },
+  
   //图片预览事件
   handlePreview(e) {
     const urls = this.data.goodsDetail.pics.map(v => v.pics_mid)
@@ -71,7 +67,8 @@ Page({
         goods_price: goodsObj.goods_price,
         goods_id: goodsObj.goods_id,
         goods_small_logo: goodsObj.goods_small_logo,
-        num: 1
+        num: 1,
+        checked:true
       })
 
     } else {

@@ -1,5 +1,5 @@
 // pages/goods_list/index.js
-
+import regeneratorRuntime from '../../lib/runtime/runtime'
 import {request} from '../../request/index'
 
 
@@ -41,14 +41,10 @@ Page({
   },
  
   //获取商品列表
-  getGoodsList(){
+  async getGoodsList(){
     // 请求数据
-    request({
-      url:'/goods/search',
-      data:this.QueryParams
-    }).then((res)=>{
-      // console.log(res.data)
-      const {goods,total} = res.data.message
+    const res = await request({url:'/goods/search',data:this.QueryParams})
+    const {goods,total} = res
       // 获取新数据
       const newGoodsList = goods
       //获取旧数据
@@ -60,7 +56,24 @@ Page({
       })
       //请求成功之后，要停止当前页面的下拉刷新
       wx.stopPullDownRefresh()
-    })
+    // request({
+    //   url:'/goods/search',
+    //   data:this.QueryParams
+    // }).then((res)=>{
+    //   // console.log(res.data)
+    //   const {goods,total} = res.data.message
+    //   // 获取新数据
+    //   const newGoodsList = goods
+    //   //获取旧数据
+    //   const oldGoodsList = this.data.goodsList
+    //   //总条数
+    //   this.Total = total
+    //   this.setData({
+    //     goodsList:[...oldGoodsList,...newGoodsList]
+    //   })
+    //   //请求成功之后，要停止当前页面的下拉刷新
+    //   wx.stopPullDownRefresh()
+    // })
   },
 
   //接收tab栏子组件的参数

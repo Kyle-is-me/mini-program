@@ -1,0 +1,7 @@
+<!--components/collectTab/index.wxml-->
+<view class="collect_tab">
+    <view class="collect_tab_item {{currentIndex===index?'active':''}}" wx:for="{{tabList}}" wx:key="id" wx:for-index="index" wx:for-item="item" bindtap="handleSendMsg" data-index="{{index}}">
+        {{item.text}}
+    </view>
+</view>
+  

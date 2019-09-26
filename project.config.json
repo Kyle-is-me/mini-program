@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -69,6 +69,19 @@
 					"name": "商品详情",
 					"pathName": "pages/goods_detail/index",
 					"query": "goods_id=47869",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收藏页",
+					"pathName": "pages/collect/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/index",
 					"scene": null
 				}
 			]

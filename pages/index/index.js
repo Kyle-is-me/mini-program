@@ -1,4 +1,5 @@
 //index.js
+import regeneratorRuntime from '../../lib/runtime/runtime'
 import { request } from '../../request/index.js';
 
 
@@ -16,33 +17,24 @@ Page({
     
     },
     // 获取轮播图数据
-    getSwiperData(){
-        request({
-            url:'/home/swiperdata',
-        }).then((res)=>{
-           this.setData({
-               swiperdata:res.data.message
-           })
-        }) 
-    },
-    //获取导航栏数据
-    getCatitems(){
-        request({
-            url:'/home/catitems'
-        }).then((res)=>{
-            this.setData({
-                catitemsList:res.data.message
-            })
+    async getSwiperData(){
+        const res = await request({ url:'/home/swiperdata'})
+        this.setData({
+            swiperdata:res
         })
     },
+    //获取导航栏数据
+    async getCatitems(){
+        const res = await request({url:'/home/catitems'})
+        this.setData({
+            catitemsList:res
+        })      
+    },
     //获取楼层数据
-    getFloorData(){
-        request({
-            url:"/home/floordata"
-        }).then((res)=>{
-            this.setData({
-                floordata:res.data.message
-            })
+    async getFloorData(){
+        const res = await request({ url:"/home/floordata"})
+        this.setData({
+            floordata:res
         })
     }
 })

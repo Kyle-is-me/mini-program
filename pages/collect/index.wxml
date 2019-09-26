@@ -1,2 +1,2 @@
 <!--pages/collect/index.wxml-->
-<text>pages/collect/index.wxml</text>
+<CollectTab tabList="{{tabList}}" currentIndex="currentIndex" bindgetIndex="getIndex"></CollectTab>

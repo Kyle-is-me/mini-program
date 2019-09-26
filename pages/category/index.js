@@ -1,4 +1,4 @@
-
+import regeneratorRuntime from '../../lib/runtime/runtime'
 import { request } from '../../request/index.js';
 
 
@@ -22,18 +22,14 @@ Page({
   Cates: [],
 
   //获取分类数据
-  getCategories() {
-    request({
-      url: '/categories'
-    }).then((res) => {
-      this.Cates = res.data.message
-
-      // wx.setStorageSync("key",123)
-      //缓存数据
-      wx.setStorageSync('cates', {
-        data: this.Cates,
-        time: Date.now()
-      })
+  async getCategories() {
+    const res = await request({url: '/categories'})
+    this.Cates = res
+    //缓存数据
+    wx.setStorageSync('cates', {
+          data: this.Cates,
+          time: Date.now()
+        })
 
       //获得左侧菜单栏的数据
       const menuList = this.Cates.map(v => v.cat_name)
@@ -43,7 +39,7 @@ Page({
       this.setData({
         menuList, goodsList
       })
-    })
+    
   },
 
   //点击切换

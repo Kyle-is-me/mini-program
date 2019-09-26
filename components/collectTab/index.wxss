@@ -1,0 +1,16 @@
+/* components/collectTab/index.wxss */
+.collect_tab{
+   display: flex;
+   height: 90rpx;
+}
+
+.collect_tab .collect_tab_item{
+       flex:1; 
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+.active{
+    color: var(--themeColor);
+    border-bottom: 1rpx solid currentColor;
+}

@@ -16,10 +16,10 @@
         <view class="goods_name">
             {{goodsDetail.goods_name}}
         </view>
-        <view class="goods_collect">
+        <navigator class="goods_collect" url="/pages/collect/index">
             <text class="iconfont icon-shoucang"></text>
             <view>收藏</view>
-        </view>
+        </navigator>
     </view>
     <!-- 商品名字介绍结束 -->
 
