@@ -6,7 +6,7 @@
 <!-- 商品列表组件 -->
 <GoodsList>
     <view wx:if="{{index===0}}" class="goods_list">      
-        <navigator class="goods_list_item" wx:for="{{goodsList}}" wx:for-index="index" wx:for-item="item" wx:key="goods_id" url="../../pages/goods_detail/index?goods_id={{item.goods_id}}">
+        <navigator class="goods_list_item" wx:for="{{goodsList}}" wx:for-index="index" wx:for-item="item" wx:key="goods_id" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
             <view class="goods_logo">
                 <image src="{{item.goods_small_logo||'http://img2.imgtn.bdimg.com/it/u=337445027,265733121&fm=26&gp=0.jpg'}}" mode="widthFix" />
             </view>

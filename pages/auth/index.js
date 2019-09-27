@@ -1,4 +1,7 @@
 // pages/auth/index.js
+import regeneratorRuntime from '../../lib/runtime/runtime'
+import {login,request} from '../../request/index.js'
+
 Page({
 
   /**
@@ -8,59 +11,34 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  //获取用户信息
+   getUserInfo(e) {
+    // console.log(e)
+   this.WxLogin(e)    
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+  //执行微信登录
+  async WxLogin(e){
+     //获取需要的参数
+     const {encryptedData,rawData,iv,signature}=e.detail
+     //小程序登录
+     const {code} = await login()
+     //拼接参数
+     const data = {code,encryptedData,rawData,iv,signature}  
+     //发送请求
+     const res= await request({url:'/users/wxlogin',method:'post',data})
+    //  console.log(res1)
+     //获取token
+     const {token}=res
+     //将token存到本地存储
+     wx.setStorageSync('token', {token});
+     wx.navigateBack({
+       //返回上几页
+       delta: 1
+     });
+       
 
   }
+
+
 })

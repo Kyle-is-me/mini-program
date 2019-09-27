@@ -105,3 +105,34 @@ export const showToast=(params)=>{
           });
     })
 }
+
+//封装的wx.login
+export const login=()=>{    
+    return new Promise((resolve,reject)=>{
+        wx.login({
+            timeout:10000,
+            success: (result) => {
+                resolve(result)
+            },
+            fail: () => {},
+            complete: () => {}
+        });
+          
+    })
+}
+
+//封装的微信支付 Promise
+export const requestPayment=(pay)=>{    
+    return new Promise((resolve,reject)=>{
+        wx.requestPayment({
+            ...pay,
+            success: (result) => {
+                resolve(result)
+            },
+            fail: () => {},
+            complete: () => {}
+        });
+          
+          
+    })
+}
