@@ -31,7 +31,7 @@ Page({
      //获取token
      const {token}=res
      //将token存到本地存储
-     wx.setStorageSync('token', {token});
+     wx.setStorageSync('token', token);
      wx.navigateBack({
        //返回上几页
        delta: 1

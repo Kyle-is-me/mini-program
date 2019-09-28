@@ -9,12 +9,19 @@ export const request = (params) => {
         title: '加载中',
         mask: true
     })
+    //自己判断是否带token，从url上面判断有没有/my/
+    let  header = {}
 
+    if(params.url.includes("/my/")){
+        header["Authorization"]=wx.getStorageSync('token');
+    }
+    
     const baseUrl = "https://api.zbztb.cn/api/public/v1"
     return new Promise((resolve, reject) => {
         account++
         wx.request({
             ...params,
+            header:{...header,...params.header},
             url: baseUrl + params.url,
             success: (res) => {
                 // console.log(res.data.message)
@@ -77,7 +84,7 @@ export const chooseAddress = () => {
     })
 }
 
-
+//模态框
 export const showModal=(params)=>{
     return new Promise((resolve,reject)=>{
         wx.showModal({

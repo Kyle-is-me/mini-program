@@ -1,66 +1,68 @@
 // pages/search/index.js
+
+
+import { request } from '../../request/index.js'
+import regeneratorRuntime from '../../lib/runtime/runtime'
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    //包含关键字的商品数组
+    goodsList: [],
+    //是否显示
+    isShow: false,
+    //输入框的值
+    inpValue: ''
+  },
+  timeId: -1,
 
+  //输入框输入事件
+  handleInputVal(e) {
+    //获取输入框的值
+    const { value } = e.detail
+    //简单非空判断
+    if (value.trim()) {
+      //显示取消按钮
+      this.setData({
+        isShow: true
+      })
+      //清除定时器---不影响正常运行---清除上一次的定时器
+      clearTimeout(this.timeId)
+      this.timeId = setTimeout(() => {
+        //如果输入框
+        this.getGoodsData(value)
+      }, 1000)
+    }else{
+      this.setData({
+        isShow:false,
+        goodsList:[]
+      })
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  //发送请求
+  async getGoodsData(value) {
+    //获取包含关键字的商品
+    const res = await request({ url: '/goods/qsearch', data: { query: value } })
+    // console.log(res)
+    this.setData({
+      goodsList: res
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  //点击取消
+  handleCancel(){
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    this.setData({
+      inpValue:'',  //清空输入框
+      isShow:false, //隐藏按钮
+      goodsList:[] //清空数组
+    })
+    
   }
+
 })
